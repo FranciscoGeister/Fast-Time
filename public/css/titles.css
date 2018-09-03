@@ -1,0 +1,15 @@
+/* titulos principales*/
+.title{
+    color: maroon;
+}
+
+
+/* titulos de informacion (nombre de socios, sucursales, etc.)*/
+.normal{
+    color: black;
+}
+
+/* buscadores */
+.search{
+	color: navy;
+}

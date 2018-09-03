@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="{{ app()->getLocale() }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Fastfit') }}</title>
+
+    <!-- Styles -->
+    <link href="{{ asset('css/menu.css') }}" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <label for="show-menu" class="show-menu">Menu</label>
+  <input type="checkbox" id="show-menu" role="button">
+    <ul id="menu">
+      @guest
+      <li><a href="{{ route('login') }}">Login</a></li>
+      @else
+      <li>
+        <a href="{{url('/administracion')}}">Administración</a>
+        <ul class="hidden">
+            <li><a href="{{url('personal')}}">Personal</a></li>
+            <li><a href="{{ url('productos')}}">Productos</a></li>
+            <li><a href="#">Finanzas</a></li>
+            <li><a href="#">Infraestructura</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a  href="{{url('/operacion')}}">
+          Operación
+        </a>
+      </li>
+      <li>
+        <a href="{{url('/fidelizacion')}}">
+          Fidelización
+        </a>
+      </li>
+      <li>
+        <a href="{{url('/gestion')}}">
+          Gestión
+        </a>
+      </li>
+      <li>
+        <a href="{{url('/configuracion')}}">
+          Configuración
+        </a>
+      </li>
+        <li >
+          <a href="{{ route('logout') }}"
+             onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">
+                    Salir
+          </a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              {{ csrf_field() }}
+          </form>
+      </li>
+
+      @endguest
+    </ul>
+
+        @yield('content')
+
+    <!-- Script -->
+
+</body>
+</html>
