@@ -25,7 +25,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <div class="navbar-header">
-          <a class="navbar-brand" style="font-family: Pacifico;font-size: 24px;width:120px; color:blue">MyTime</a>
+          <a class="navbar-brand" style="font-family: Pacifico;font-size: 24px;width:120px; color:blue">FastTime</a>
         </div>
         @guest
         <li ><a class="nav-link" href="{{ route('login') }}">Login</a></li>
